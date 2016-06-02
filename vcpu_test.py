@@ -1,5 +1,6 @@
 from vcpu_define import *
 from convert_reg import *
+from emulator import *
 
 def_vcpu = DefineStructure();
 registers = def_vcpu.reset_register()
