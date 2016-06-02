@@ -2,6 +2,7 @@ import vcpu_define
 from convert_reg import *
 from struct import *
 from filtertable import *
+from DB import *
 
 def GetArgumentType(opcode):
 
@@ -16,6 +17,8 @@ def GetArgumentNum(opcode, array1, array2):
 
 a1_word, a2_word, a1_dword, a2_dword = 0, 0, 0, 0;
 a1_byte, a2_byte = 0, 0;
+insSet = Instruction()
+
 class AsmEmulator:
 	def Single_OpCode(self, data):
 		arg_num = GetArgumentNum(data[0], filterlist, threeArgs)

@@ -8,7 +8,9 @@ register_class = {'eax':0, 'ebx':1, 'ecx':2, 'edx':3,
 					'ebp':4, 'esp':5, 'esi':6, 'edi':7, 'eip':8}
 OK = 0;
 dataStructure = [0x0] * 9;
-base, stackBase = 0x00000000, 0xbf000000;
+base, stackBase = 0x00000000, 0x100;
+stackFrame = [0x0] * 0x1000
+
 def is_null(value):
 	if value == 0:
 		return True;
