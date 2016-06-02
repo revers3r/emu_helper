@@ -1,3 +1,4 @@
+import other_dir
 from vcpu_define import *
 from convert_reg import *
 from emulator import *
