@@ -26,3 +26,6 @@ class AsmEmulator:
 			typeArg1, Arg1_len = GetArgumentType()
 	def Double_OpCode(self, data):
 		## Not Prevention
+
+	def Step(self, section, arg1, arg2, arg3 = None):
+
