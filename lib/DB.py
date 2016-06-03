@@ -65,4 +65,11 @@ class Instruction:
 		return zero_flag, (result & 0xffffffff)
 
 	def _cmp(self, a1, a2):
-		
+		zero_flag = 0
+		if a1 == a2:
+			zero_flag = 1
+			return 0, zero_flag
+		else:
+			return 1, zero_flag
+
+	
