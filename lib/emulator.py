@@ -2,7 +2,7 @@ import vcpu_define
 from convert_reg import *
 from struct import *
 from filtertable import *
-from DB import *
+from ArithmeticAsm import *
 
 def GetArgumentType(opcode):
 
