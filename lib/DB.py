@@ -72,4 +72,43 @@ class Instruction:
 		else:
 			return 1, zero_flag
 
+	def _inc(self, a1):
+		result = a1 + 1;
+		carry_flag = 0
+		zero_flag = 0
+		if result >= 0x100000000:
+			carry_flag = 1
+		elif result == 0:
+			zero_flag = 1
+		return zero_flag, carry_flag, (result & 0xffffffff)
+
+	def _dec(self, a1):
+		result = a1 - 1;
+		carry_flag, zero_flag = 0, 0
+		if result < 0x0:
+			carry_flag = 1
+		elif result == 0x0:
+			zero_flag = 1
+		return zero_flag, carry_flag, (result & 0xffffffff)
+
+	def _imul(self, a1, a2, a3):
+		result = a2 * a3;
+		carry_flag, zero_flag = 0, 0
+		if result >= 0x100000000:
+			carry_flag = 1
+			return carry_flag, zero_flag, (result & 0xffffffff)
+		elif result == 0x0:
+			zero_flag = 1
+
+		return carry_flag, zero_flag, (result & 0xffffffff)
+
+	def _mov(self, a1, a2):
+		return a2;
+
+	def _nop(self):
+		return;
+
+	def _xchg(self, a1, a2):
+		return a2, a1;
+
 	
